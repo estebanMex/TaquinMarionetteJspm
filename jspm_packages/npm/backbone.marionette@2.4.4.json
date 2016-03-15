@@ -1,0 +1,14 @@
+{
+  "main": "lib/core/backbone.marionette.js",
+  "format": "cjs",
+  "meta": {
+    "*": {
+      "globals": {
+        "process": "process"
+      }
+    },
+    "*.json": {
+      "format": "json"
+    }
+  }
+}

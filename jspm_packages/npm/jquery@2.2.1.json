@@ -1,0 +1,14 @@
+{
+  "main": "dist/jquery.js",
+  "format": "amd",
+  "meta": {
+    "*": {
+      "globals": {
+        "process": "process"
+      }
+    },
+    "*.json": {
+      "format": "json"
+    }
+  }
+}

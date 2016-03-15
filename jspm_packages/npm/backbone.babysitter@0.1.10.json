@@ -1,0 +1,17 @@
+{
+  "main": "lib/backbone.babysitter.js",
+  "format": "cjs",
+  "meta": {
+    "*": {
+      "globals": {
+        "process": "process"
+      }
+    },
+    "*.json": {
+      "format": "json"
+    },
+    "public/javascripts/jquery.js": {
+      "format": "amd"
+    }
+  }
+}

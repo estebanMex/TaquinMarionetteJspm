@@ -1,0 +1,4 @@
+body .container div > aside{
+	float:left;
+	width: 50%;
+}

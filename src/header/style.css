@@ -1,0 +1,10 @@
+body .container div > section{
+	float:right;
+}
+
+header{
+	height: 3rem;
+	text-align: center;
+	font-size: 3rem;
+	margin:1rem 0;
+}

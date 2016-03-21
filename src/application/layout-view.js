@@ -2,11 +2,13 @@
 import Marionette from 'backbone.marionette';
 
 export default Marionette.LayoutView.extend({
-  template: "#layout-view-template",
+	template: "#layout-view-template",
+	className: 'container',
 
-  regions: {
-    header: '[data-view="header"]',
-    sidebar: '[data-view="sidebar"]',
-    content: '[data-view="content"]'
-  }
+	regions: {
+		header: '[data-view="header"]',
+		score: '[data-view="score"]',
+		content: '[data-view="content"]'
+	}
+
 });

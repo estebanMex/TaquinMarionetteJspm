@@ -14,30 +14,62 @@ let Taquin = {
 
 	init: function() {
 
-		let nums = [];
+		let nums = getNums(16);
+		let pos = getPositionsTiles();
 
-		_.times(16, (curr) => {
-			if (curr) {
-				nums.push(curr);
-			}
-		});
-
-		nums.splice(5, 0, '--');
-
-		let tiles = new TilesCollection();
-
-		_.times(16, (curr) => {
-			tiles.add(new TileModel({
-				num: nums[curr],
-				position: curr
-			}));
-		});
+		// ajout de la piece vide
+		nums.splice(7, 0, '--');
 
 		let taquin = new TilesCollectionView({
-			collection: tiles
+			collection: generateCollection(TilesCollection, TileModel, {
+				nums: nums,
+				pos: pos,
+				size: 16
+			})
 		});
 
 		return taquin;
+
+		// HELPERS
+
+		function generateCollection(collection, model, options) {
+			let tiles = new collection();
+
+			_.times(options.size, (curr) => {
+				tiles.add(new model({
+					num: options.nums[curr],
+					position: curr,
+					pos: options.pos[curr]
+				}));
+			});
+
+			return tiles;
+		}
+
+
+		function getNums(nb) {
+			let output = [];
+			for (let i = 1; i <= nb; i++) {
+				output.push(i);
+			}
+			return _.shuffle(output);
+		}
+
+		function getPositionsTiles() {
+			let x = [5, 106, 207, 309];
+			let y = x;
+			let pos = [];
+			x.forEach(function(currx) {
+				y.forEach(function(curry) {
+					pos.push({
+						x: currx,
+						y: curry
+					});
+				})
+			})
+			return pos;
+		}
+
 	}
 
 };

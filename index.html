@@ -2,31 +2,73 @@
 <html lang="fr">
 
 <head>
-    <meta charset="utf-8">
+ <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>collection view marionette</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="src/favicon-16x16.png">
 
 </head>
 
 <body>
 
-<div class="container" data-view="application"></div>
+<div data-view="application"></div>
 
 <!-- TEMPLATES START -->
+
+<!-- Application start -->
 <script id="layout-view-template" type="text/template">
-    <header data-view="header">Header</header>
-    <aside data-view="sidebar">aside</aside>
-    <section data-view="content">content</section>
+
+<div class="header clearfix" data-view="header"></div>
+
+<div class="row">
+
+</div>
+<div class="jumbotron col-lg-6" >
+	<h1>Taquin Game</h1>
+	<p class="lead" data-view="score"></p>
+	<p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+</div>
+
+<div data-view="content" class="col-lg-6"></div>
 </script>
 
+<!-- Application end -->
+
+
+<!-- Header start -->
+<script id="layout-header-view-template" type="text/template">
+      <div class="header clearfix">
+       <!--
+       <nav data-view="nav">
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">About</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        -->
+        <div data-view="logo"></div>
+      </div>
+</script>
+
+<script id="logo-view-template" type="text/template">
+    <h3 class="text-muted">Project name</h3>
+</script>
+<!-- Header end -->
+
+<!-- Score start -->
 <script id="score-view-template" type="text/template">
-    <span>votre score : <%- nbClicks %> </span>
+    <span>votre score : <%- nbClick %> </span>
 </script>
+<!-- Score end -->
 
 
-
+<!-- Taquin start -->
 <script type="text/template" id="tile-item"><%- num %></script>
+<!-- Taquin end -->
+
+
 <!-- TEMPLATES END -->
 
 <!-- build:js -->

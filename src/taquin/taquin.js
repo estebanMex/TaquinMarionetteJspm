@@ -52,7 +52,7 @@ let Taquin = {
 			for (let i = 1; i <= nb; i++) {
 				output.push(i);
 			}
-			return _.shuffle(output);
+			return output;
 		}
 
 		function getPositionsTiles() {

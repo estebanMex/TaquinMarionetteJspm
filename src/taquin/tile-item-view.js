@@ -29,7 +29,7 @@ export default Marionette.ItemView.extend({
 
         // only click in tiles around of tileEmpty
         if (positionsTilesAround.indexOf(positionTileCliked) !== -1) {
-            PubSub.trigger('click:tile', this);
+            PubSub.trigger('taquin:click:tile', this);
         }
 
     }

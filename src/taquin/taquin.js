@@ -9,9 +9,9 @@ import TileModel from './tile-model';
 // views
 import TilesCollectionView from './tiles-collection-view';
 import TileItemView from './tile-item-view';
+import PubSub from '../application/pubsub';
 
 let Taquin = {
-
 	init: function() {
 
 		let nums = getNums(16);
@@ -71,8 +71,6 @@ let Taquin = {
 		}
 
 	}
-
 };
 
-export
-default Taquin.init();
+export default Taquin.init();

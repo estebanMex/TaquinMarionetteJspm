@@ -9,13 +9,19 @@ export default Marionette.CollectionView.extend({
 	className: "boardGame",
 
 	initialize: function() {
-		this.listenTo(PubSub, 'click:tile', this.updateTiles);
+		this.listenTo(PubSub, 'taquin:click:tile', this.updateTiles);
 		this._animInProgress = false;
 	},
 	childEvents: {
 		'click': function(a) {
 			console.log(a)
 		}
+	},
+
+	changeGrid: function() {
+		// alert('changer la grille SVP');
+		// reset score
+		// charger une nouvelle grid
 	},
 
 	updateTiles: function(tileClicked) {
@@ -70,7 +76,7 @@ export default Marionette.CollectionView.extend({
 				_self._animInProgress = false;
 				PubSub.trigger('change:tile:position', tileClicked);
 			}
-		},"easeIn");
+		}, "easeIn");
 
 	},
 
